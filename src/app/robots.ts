@@ -3,6 +3,6 @@ import type { MetadataRoute } from "next";
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [{ userAgent: "*", allow: "/" }],
-    sitemap: "https://pakcalc.vercel.app/sitemap.xml",
+    sitemap: "https://pakcalc-one.vercel.app/sitemap.xml",
   };
 }

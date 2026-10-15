@@ -37,7 +37,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "PakCalc",
-  url: "https://pakcalc.vercel.app",
+  url: "https://pakcalc-one.vercel.app",
   description:
     "Free Pakistan tax and money calculators: income tax, PTA mobile tax, zakat.",
 };
