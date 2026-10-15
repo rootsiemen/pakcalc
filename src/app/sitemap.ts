@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE = "https://pakcalc-one.vercel.app";
+const BASE = "https://calc.frinjo.me";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages = ["", "/income-tax-calculator", "/pta-tax-calculator", "/zakat-calculator", "/about", "/privacy"];

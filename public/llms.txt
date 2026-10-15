@@ -1,8 +1,8 @@
 # PakCalc — Pakistan Tax & Money Calculators
 
 Free calculators for Pakistan, updated for 2026-27:
-- Income Tax Calculator: https://pakcalc-one.vercel.app/income-tax-calculator — salaried slabs under Finance Act 2026 (0% to Rs 600k; 1%/11%/20%/25%/29%/32%/35% bands; surcharge abolished)
-- PTA Mobile Tax Calculator: https://pakcalc-one.vercel.app/pta-tax-calculator — DIRBS registration tax on passport or CNIC; customs duty Rs 250 + regulatory duty + 18%/25% sales tax + income tax (CNIC only, doubled for non-filers) + handset levy; per SRO 1064(I)/2026
-- Zakat Calculator: https://pakcalc-one.vercel.app/zakat-calculator — 2.5% on cash, gold, silver, business assets; nisab = lower of 7.5 tola gold and 52.5 tola silver
+- Income Tax Calculator: https://calc.frinjo.me/income-tax-calculator — salaried slabs under Finance Act 2026 (0% to Rs 600k; 1%/11%/20%/25%/29%/32%/35% bands; surcharge abolished)
+- PTA Mobile Tax Calculator: https://calc.frinjo.me/pta-tax-calculator — DIRBS registration tax on passport or CNIC; customs duty Rs 250 + regulatory duty + 18%/25% sales tax + income tax (CNIC only, doubled for non-filers) + handset levy; per SRO 1064(I)/2026
+- Zakat Calculator: https://calc.frinjo.me/zakat-calculator — 2.5% on cash, gold, silver, business assets; nisab = lower of 7.5 tola gold and 52.5 tola silver
 
 All calculations run client-side. Figures are estimates, not official tax advice. Rates verified October 2026.
