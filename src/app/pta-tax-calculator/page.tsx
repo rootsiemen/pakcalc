@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
 import PtaForm from "./calculator";
+import { pageMeta, softwareAppLd, breadcrumbLd } from "../lib/seo";
 
-export const metadata: Metadata = {
-  title: "PTA Mobile Tax Calculator 2026-27 — Passport & CNIC (DIRBS)",
-  description:
-    "Calculate PTA mobile registration tax for 2026-27 on passport or CNIC. Line-by-line breakup: customs duty, regulatory duty, sales tax, income tax, handset levy.",
-};
+const PAGE_PATH = "/pta-tax-calculator";
+const PAGE_TITLE = "PTA Mobile Tax Calculator 2026-27 — Passport & CNIC (DIRBS)";
+const PAGE_DESC =
+  "Calculate PTA mobile registration tax for 2026-27 on passport or CNIC. Line-by-line breakup: customs duty, regulatory duty, sales tax, income tax, handset levy.";
+
+export const metadata: Metadata = pageMeta({
+  path: PAGE_PATH,
+  title: PAGE_TITLE,
+  description: PAGE_DESC,
+});
 
 const faqLd = {
   "@context": "https://schema.org",
@@ -30,12 +36,26 @@ const faqLd = {
   ],
 };
 
+const appLd = softwareAppLd(PAGE_TITLE, PAGE_DESC, PAGE_PATH);
+const crumbLd = breadcrumbLd([
+  { name: "Home", path: "" },
+  { name: "PTA Mobile Tax Calculator", path: PAGE_PATH },
+]);
+
 export default function Page() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(appLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbLd) }}
       />
       <PtaForm />
     </>

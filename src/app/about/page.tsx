@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
+import { pageMeta } from "../lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
+  path: "/about",
   title: "About PakCalc",
-  description: "About PakCalc — free Pakistan tax and money calculators.",
-};
+  description:
+    "About PakCalc — free Pakistan tax and money calculators for income tax, PTA mobile tax and zakat, updated for 2026-27.",
+});
 
 export default function About() {
   return (

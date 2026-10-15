@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
 import IncomeTaxForm from "./calculator";
+import { pageMeta, softwareAppLd, breadcrumbLd } from "../lib/seo";
 
-export const metadata: Metadata = {
-  title: "Income Tax Calculator Pakistan 2026-27 — Salary Tax & Take-Home Pay",
-  description:
-    "Free income tax calculator for salaried Pakistanis 2026-27. Enter monthly salary, get monthly tax, take-home pay and FBR slab breakdown under Finance Act 2026.",
-};
+const PAGE_PATH = "/income-tax-calculator";
+const PAGE_TITLE =
+  "Income Tax Calculator Pakistan 2026-27 — Salary Tax & Take-Home Pay";
+const PAGE_DESC =
+  "Free income tax calculator for salaried Pakistanis 2026-27. Enter monthly salary, get monthly tax, take-home pay and FBR slab breakdown under Finance Act 2026.";
+
+export const metadata: Metadata = pageMeta({
+  path: PAGE_PATH,
+  title: PAGE_TITLE,
+  description: PAGE_DESC,
+});
 
 const faqLd = {
   "@context": "https://schema.org",
@@ -30,12 +37,26 @@ const faqLd = {
   ],
 };
 
+const appLd = softwareAppLd(PAGE_TITLE, PAGE_DESC, PAGE_PATH);
+const crumbLd = breadcrumbLd([
+  { name: "Home", path: "" },
+  { name: "Income Tax Calculator", path: PAGE_PATH },
+]);
+
 export default function Page() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(appLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbLd) }}
       />
       <IncomeTaxForm />
     </>

@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "./lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
+  path: "",
   title: "PakCalc — Free Pakistan Tax & Money Calculators (2026-27)",
   description:
     "Calculate Pakistan income tax on salary, PTA mobile registration tax (passport & CNIC), and zakat with live nisab. Free, accurate, updated for 2026-27.",
-};
+  absoluteTitle: true,
+});
 
 const tools = [
   {

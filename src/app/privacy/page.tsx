@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
+import { pageMeta } from "../lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
+  path: "/privacy",
   title: "Privacy Policy",
-  description: "PakCalc privacy policy — no data collection.",
-};
+  description:
+    "PakCalc privacy policy — no data collection. All calculations run locally in your browser.",
+});
 
 export default function Privacy() {
   return (

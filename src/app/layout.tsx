@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://calc.frinjo.me"),
   title: {
     default: "PakCalc — Pakistan Tax & Money Calculators",
     template: "%s | PakCalc",
@@ -29,7 +30,24 @@ export const metadata: Metadata = {
     title: "PakCalc — Pakistan Tax & Money Calculators",
     description:
       "Free calculators: income tax on salary, PTA mobile tax, zakat. Updated for 2026-27.",
+    url: "https://calc.frinjo.me",
+    siteName: "PakCalc",
     type: "website",
+    images: [
+      {
+        url: "https://calc.frinjo.me/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PakCalc — Free Pakistan Tax Calculators 2026-27",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PakCalc — Pakistan Tax & Money Calculators",
+    description:
+      "Free calculators: income tax on salary, PTA mobile tax, zakat. Updated for 2026-27.",
+    images: ["https://calc.frinjo.me/og-image.png"],
   },
 };
 
@@ -47,6 +65,7 @@ function Header() {
     { href: "/income-tax-calculator", label: "Income Tax" },
     { href: "/pta-tax-calculator", label: "PTA Tax" },
     { href: "/zakat-calculator", label: "Zakat" },
+    { href: "/blog", label: "Blog" },
     { href: "/about", label: "About" },
   ];
   return (
@@ -84,6 +103,7 @@ function Footer() {
           <a href="/income-tax-calculator" className="hover:text-emerald-700">Income Tax</a>
           <a href="/pta-tax-calculator" className="hover:text-emerald-700">PTA Tax</a>
           <a href="/zakat-calculator" className="hover:text-emerald-700">Zakat</a>
+          <a href="/blog" className="hover:text-emerald-700">Blog</a>
         </div>
         <p className="mt-4 text-xs">© 2026 PakCalc. Rates last verified: October 2026.</p>
       </div>
