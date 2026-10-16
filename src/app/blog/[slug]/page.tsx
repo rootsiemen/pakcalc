@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { posts, getPost } from "../../../lib/posts";
-import { pageMeta, SITE_URL } from "../../lib/seo";
+import { pageMeta, SITE_URL, breadcrumbLd } from "../../lib/seo";
 
 export function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }));
@@ -44,11 +44,21 @@ export default async function ArticlePage({
     publisher: { "@type": "Organization", name: "PakCalc", url: SITE_URL },
   };
 
+  const crumbs = breadcrumbLd([
+    { name: "Home", path: "" },
+    { name: "Blog", path: "/blog" },
+    { name: post.title, path: `/blog/${post.slug}` },
+  ]);
+
   return (
     <div className="mx-auto max-w-3xl px-4 py-10">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbs) }}
       />
       <a
         href="/blog"

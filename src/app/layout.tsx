@@ -60,6 +60,17 @@ const jsonLd = {
     "Free Pakistan tax and money calculators: income tax, PTA mobile tax, zakat.",
 };
 
+/** Site brand entity for AI-search/GEO consistency. */
+const orgLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "PakCalc",
+  url: "https://calc.frinjo.me",
+  logo: "https://calc.frinjo.me/icon.png",
+  description:
+    "Free Pakistan tax and money calculators: income tax, PTA mobile tax, zakat.",
+};
+
 function Header() {
   const links = [
     { href: "/income-tax-calculator", label: "Income Tax" },
@@ -121,6 +132,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLd) }}
         />
       </head>
       <body className="min-h-full flex flex-col bg-zinc-50 text-zinc-900">

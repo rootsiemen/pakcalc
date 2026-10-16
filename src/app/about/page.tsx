@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { pageMeta } from "../lib/seo";
+import { pageMeta, SITE_URL } from "../lib/seo";
 
 export const metadata: Metadata = pageMeta({
   path: "/about",
@@ -9,8 +9,25 @@ export const metadata: Metadata = pageMeta({
 });
 
 export default function About() {
+  const aboutLd = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: "About PakCalc",
+    url: `${SITE_URL}/about`,
+    about: {
+      "@type": "Organization",
+      name: "PakCalc",
+      url: SITE_URL,
+      logo: `${SITE_URL}/icon.png`,
+    },
+  };
+
   return (
     <div className="mx-auto max-w-3xl px-4 py-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutLd) }}
+      />
       <h1 className="text-3xl font-extrabold tracking-tight">About PakCalc</h1>
       <p className="mt-4 text-zinc-600">
         PakCalc is a free set of money calculators built for Pakistan: income
